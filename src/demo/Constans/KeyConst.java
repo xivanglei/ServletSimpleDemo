@@ -12,4 +12,7 @@ public interface KeyConst {
     //httpRequest
     String USERNAME = "username";
     String PASSWORD = "password";
+    String NAME = "name";
+    String AGE = "age";
+    String HOBBY = "hobby";
 }
