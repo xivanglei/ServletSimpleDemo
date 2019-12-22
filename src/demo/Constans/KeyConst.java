@@ -15,4 +15,6 @@ public interface KeyConst {
     String NAME = "name";
     String AGE = "age";
     String HOBBY = "hobby";
+    String COMPANY = "company";
+    String P1 = "p1";
 }
