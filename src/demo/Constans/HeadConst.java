@@ -8,4 +8,6 @@ package demo.Constans;
 public interface HeadConst {
 
     String CONTENT_TYPE_UTF8 = "text/html;charset=utf-8";
+    String UTF8 = "UTF-8";
+    String CONTENT_TYPE = "Content-Type";
 }

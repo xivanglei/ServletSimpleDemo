@@ -1,6 +1,7 @@
 package demo;
 
 import demo.Constans.HeadConst;
+import demo.Constans.PathConst;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -23,9 +24,6 @@ import java.util.Set;
 @WebServlet(urlPatterns = "/ReadResource")
 public class ReadResource extends HttpServlet {
 
-
-    private static final String RESOURCE_PATH = "/WEB-INF/classes/test.properties";
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType(HeadConst.CONTENT_TYPE_UTF8);
@@ -41,17 +39,17 @@ public class ReadResource extends HttpServlet {
         for(String name : set) {
             out.println(name + "=" + pros.getProperty(name) + "<br>");
         }
-        out.println("相对地址是: " + RESOURCE_PATH + "<br>");
-        out.println("绝对地址是: " + context.getRealPath(RESOURCE_PATH) + "<br>");
-        out.println("URL地址是:" + context.getResource(RESOURCE_PATH).toString() + "<br>");
+        out.println("相对地址是: " + PathConst.TEST_PROPERTIES + "<br>");
+        out.println("绝对地址是: " + context.getRealPath(PathConst.TEST_PROPERTIES) + "<br>");
+        out.println("URL地址是:" + context.getResource(PathConst.TEST_PROPERTIES).toString() + "<br>");
     }
 
     private InputStream getRelativePath(ServletContext context) {
-        return context.getResourceAsStream(RESOURCE_PATH);
+        return context.getResourceAsStream(PathConst.TEST_PROPERTIES);
     }
 
     private FileInputStream getAbsolutePath(ServletContext context) throws IOException {
-        String absolutePath = context.getRealPath(RESOURCE_PATH);
+        String absolutePath = context.getRealPath(PathConst.TEST_PROPERTIES);
         return new FileInputStream(absolutePath);
     }
 
