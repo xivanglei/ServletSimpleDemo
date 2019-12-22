@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <welcome-file-list>
+        <welcome-file>welcome.html</welcome-file>
+    </welcome-file-list>
+
+    <!--应用级的初始化参数-->
+    <context-param>
+        <param-name>companyName</param-name>
+        <param-value>dalong</param-value>
+    </context-param>
+    <context-param>
+        <param-name>address</param-name>
+        <param-value>shanghai</param-value>
+    </context-param>
+
+    <servlet>
+        <!--命名-->
+        <servlet-name>HelloWorldServlet</servlet-name>
+        <!--地址路径-->
+        <servlet-class>demo.HelloWorldServlet</servlet-class>
+        <!--启动tomcat就马上加载，值越小越早加载,比如初始化数据库之类，即使没访问到这个servlet也要预加载-->
+        <!--<load-on-startup>1</load-on-startup>-->
+    </servlet>
+    <servlet-mapping>
+        <!--使用哪个servlet-->
+        <servlet-name>HelloWorldServlet</servlet-name>
+        <!--网络虚拟路径-->
+        <url-pattern>/HelloWorldServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RequestMethodServlet</servlet-name>
+        <servlet-class>demo.RequestMethodServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RequestMethodServlet</servlet-name>
+        <url-pattern>/RequestMethodServlet</url-pattern>
+        <!--"/"表示所有找不到的网页都可以跑到这里来-->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+</web-app>

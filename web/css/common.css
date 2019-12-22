@@ -1,0 +1,10 @@
+@charset "UTF-8";
+body {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.input_box {
+    width: 450px;
+}
