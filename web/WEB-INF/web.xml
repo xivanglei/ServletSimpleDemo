@@ -5,7 +5,7 @@
          version="4.0">
 
     <welcome-file-list>
-        <welcome-file>welcome.html</welcome-file>
+        <welcome-file>login.html</welcome-file>
     </welcome-file-list>
 
     <!--应用级的初始化参数-->
@@ -40,7 +40,7 @@
     <servlet-mapping>
         <servlet-name>RequestMethodServlet</servlet-name>
         <url-pattern>/RequestMethodServlet</url-pattern>
-        <!--"/"表示所有找不到的网页都可以跑到这里来-->
-        <url-pattern>/</url-pattern>
+        <!--"/"表示所有找不到的网页都可以跑到这里来,优先级比资源文件更高，如果这么设置连html都访问不到了-->
+        <!--<url-pattern>/</url-pattern>-->
     </servlet-mapping>
 </web-app>

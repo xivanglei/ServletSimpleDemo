@@ -6,5 +6,10 @@ package demo.Constans;
  * Description:key相关
  */
 public interface KeyConst {
+
     String CHINESE_TEST = "chinese_test";
+
+    //httpRequest
+    String USERNAME = "username";
+    String PASSWORD = "password";
 }

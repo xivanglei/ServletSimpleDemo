@@ -7,6 +7,14 @@ package demo.Constans;
  */
 public interface PathConst {
 
+    //resource
     String TEST_PROPERTIES = "/WEB-INF/classes/test.properties";
+
+
+
+    //url
+    String URL_WELCOME = "/Chapter03_war_exploded/welcome.html";
+    String URL_LOGIN = "/Chapter03_war_exploded/login.html";
+
 
 }
