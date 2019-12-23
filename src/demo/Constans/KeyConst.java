@@ -17,4 +17,5 @@ public interface KeyConst {
     String HOBBY = "hobby";
     String COMPANY = "company";
     String P1 = "p1";
+    String LAST_ACCESS = "last_access";
 }
