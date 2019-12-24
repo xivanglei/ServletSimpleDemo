@@ -1,11 +1,8 @@
-package demo;
-
-import com.oracle.tools.packager.Log;
+package demo.servlet;
 
 import javax.servlet.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Logger;
 
 /**
  * Author:xianglei

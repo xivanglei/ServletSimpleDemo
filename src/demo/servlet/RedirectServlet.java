@@ -1,4 +1,4 @@
-package demo;
+package demo.servlet;
 
 import demo.Constans.HeadConst;
 import demo.Constans.KeyConst;
@@ -36,9 +36,9 @@ public class RedirectServlet extends HttpServlet {
 
         //根据是否登录成功重定向到不同页面
         if(StringUtil.equals(username, ADMIN_USERNAME) && StringUtil.equals(password, ADMIN_PASSWORD)) {
-            resp.sendRedirect(PathConst.URL_WELCOME);
+            resp.sendRedirect(PathConst.URL_BASE + PathConst.URL_WELCOME);
         } else {
-            resp.sendRedirect(PathConst.URL_LOGIN);
+            resp.sendRedirect(PathConst.URL_BASE + PathConst.URL_LOGIN);
         }
 
     }

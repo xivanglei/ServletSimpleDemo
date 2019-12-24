@@ -1,4 +1,4 @@
-package demo;
+package demo.servlet;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

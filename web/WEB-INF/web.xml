@@ -22,7 +22,7 @@
         <!--命名-->
         <servlet-name>HelloWorldServlet</servlet-name>
         <!--地址路径-->
-        <servlet-class>demo.HelloWorldServlet</servlet-class>
+        <servlet-class>demo.servlet.HelloWorldServlet</servlet-class>
         <!--启动tomcat就马上加载，值越小越早加载,比如初始化数据库之类，即使没访问到这个servlet也要预加载-->
         <!--<load-on-startup>1</load-on-startup>-->
     </servlet>
@@ -35,7 +35,7 @@
 
     <servlet>
         <servlet-name>RequestMethodServlet</servlet-name>
-        <servlet-class>demo.RequestMethodServlet</servlet-class>
+        <servlet-class>demo.servlet.RequestMethodServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RequestMethodServlet</servlet-name>

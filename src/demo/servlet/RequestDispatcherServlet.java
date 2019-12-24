@@ -1,8 +1,9 @@
-package demo;
+package demo.servlet;
 
 import demo.Constans.HeadConst;
 import demo.Constans.KeyConst;
 import demo.Constans.PathConst;
+import demo.component.UrlParamBuild;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,7 +27,10 @@ public class RequestDispatcherServlet extends HttpServlet {
         resp.setContentType(HeadConst.CONTENT_TYPE_UTF8);
         //转发的同时先设置属性
         req.setAttribute(KeyConst.COMPANY, "祥雷");
-        RequestDispatcher dispatcher = req.getRequestDispatcher(PathConst.URL_DISPATCHER_TARGET);
+        String url = UrlParamBuild.instance(PathConst.URL_DISPATCHER_TARGET)
+                .addParam("p1", "abc")
+                .toUrl();
+        RequestDispatcher dispatcher = req.getRequestDispatcher(url);
         //请求转发
 //        dispatcher.forward(req, resp);
         //请求包含，可以理解为接着先交给下一个页面处理返回，完了回来这个页面继续

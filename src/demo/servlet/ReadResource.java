@@ -1,4 +1,4 @@
-package demo;
+package demo.servlet;
 
 import demo.Constans.HeadConst;
 import demo.Constans.PathConst;

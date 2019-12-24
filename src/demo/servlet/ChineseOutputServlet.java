@@ -1,7 +1,5 @@
-package demo;
+package demo.servlet;
 
-import com.sun.deploy.util.SessionState;
-import com.sun.security.ntlm.Client;
 import demo.Constans.HeadConst;
 import demo.Constans.KeyConst;
 import demo.Constans.PathConst;
@@ -13,8 +11,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
-import java.nio.charset.StandardCharsets;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
 import java.util.Properties;
 
 /**

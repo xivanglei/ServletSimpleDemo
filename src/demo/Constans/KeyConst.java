@@ -18,4 +18,5 @@ public interface KeyConst {
     String COMPANY = "company";
     String P1 = "p1";
     String LAST_ACCESS = "last_access";
+    String ID = "id";
 }

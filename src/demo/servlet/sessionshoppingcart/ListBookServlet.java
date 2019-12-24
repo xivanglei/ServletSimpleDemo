@@ -1,8 +1,11 @@
-package demo;
+package demo.servlet.sessionshoppingcart;
 
 import demo.Constans.HeadConst;
 import demo.Constans.KeyConst;
-import demo.utils.StringUtil;
+import demo.Constans.PathConst;
+import demo.bean.BookBean;
+import demo.component.UrlParamBuild;
+import demo.db.BookDB;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,25 +17,22 @@ import java.io.PrintWriter;
 
 /**
  * Author:xianglei
- * Date: 2019-12-22 19:24
- * Description:调度器转发的目标页
+ * Date: 2019-12-24 09:11
+ * Description:购物车书列表
  */
-@WebServlet(urlPatterns = "/DispatcherTargetServlet")
-public class DispatcherTargetServlet extends HttpServlet {
-
+@WebServlet(urlPatterns = "/cart/ListBookServlet")
+public class ListBookServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //其实这里设置不起作用，因为示例对象在转发之前已经创建，编码模式也已经确定
         resp.setContentType(HeadConst.CONTENT_TYPE_UTF8);
         PrintWriter out = resp.getWriter();
-        String company = (String) req.getAttribute(KeyConst.COMPANY);
-        if(StringUtil.isNotBlank(company)) {
-            out.println("公司名称: " + company + "<br>");
+        out.println("本站提供的图书有:<br>");
+        for(BookBean bean : BookDB.getAll()) {
+            String url = UrlParamBuild.instance(PathConst.URL_BASE + PathConst.URL_PURCHASE_BOOK)
+                    .addParam(KeyConst.ID, bean.getId())
+                    .toUrl();
+            out.println(bean.getName() + "<a href='" + url + "'>点击购买</a><br>");
         }
-        out.println("中国" + "<br>");
-        out.println("URI: " + req.getRequestURI() + "<br>");
-        out.println("QueryString: " + req.getQueryString() + "<br>");
-        out.println("parameter p1: " + req.getParameter(KeyConst.P1) + "<br>");
     }
 
     @Override

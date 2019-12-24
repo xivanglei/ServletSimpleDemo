@@ -13,9 +13,11 @@ public interface PathConst {
 
 
     //url
-    String URL_WELCOME = "/Chapter03_war_exploded/welcome.html";
-    String URL_LOGIN = "/Chapter03_war_exploded/login.html";
-    String URL_DISPATCHER_TARGET = "/DispatcherTargetServlet?p1=abc";
+    String URL_BASE = "/Chapter03_war_exploded";
+    String URL_WELCOME = "/welcome.html";
+    String URL_LOGIN = "/login.html";
+    String URL_DISPATCHER_TARGET = "/DispatcherTargetServlet";
+    String URL_PURCHASE_BOOK = "/cart/PurchaseBookServlet";
 
 
 }
