@@ -21,4 +21,5 @@ public interface UrlConst {
     String URL_COOKIE = "/CookieServlet";                           //Coolie案例
     String URL_GET_CONTEXT_PARAMETER = "/GetContextParameterServlet";      //读取ServletContext参数(不是初始化参数),需要先进/SetContextParameterServlet
     String URL_SET_CONTEXT_PARAMETER = "/SetContextParameterServlet";      //设置ServletContext参数(不是初始化参数)
+    String URL_CART = "/cart/CartServlet";                               //演示读取session的购物车
 }

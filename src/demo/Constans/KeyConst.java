@@ -8,6 +8,7 @@ package demo.Constans;
 public interface KeyConst {
 
     String CHINESE_TEST = "chinese_test";
+    String JSESSIONID = "JSESSIONID";
 
     //httpRequest
     String USERNAME = "username";
@@ -19,4 +20,5 @@ public interface KeyConst {
     String P1 = "p1";
     String LAST_ACCESS = "last_access";
     String ID = "id";
+    String CART = "cart";
 }
