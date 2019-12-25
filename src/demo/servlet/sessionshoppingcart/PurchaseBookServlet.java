@@ -11,8 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Author:xianglei
@@ -32,9 +32,9 @@ public class PurchaseBookServlet extends HttpServlet {
         BookBean bean = BookDB.getBookById(id);
         //创建session或获取之前的session  默认为req.getSession(true) 表示如果没有就创建新的session，false没有就返回null
         HttpSession session = req.getSession();
-        List<BookBean> cart = (List) session.getAttribute(KeyConst.CART);
+        Set<BookBean> cart = (Set) session.getAttribute(KeyConst.CART);
         if(cart == null) {
-            cart = new ArrayList<>();
+            cart = new HashSet<>();
             session.setAttribute(KeyConst.CART, cart);
         }
         cart.add(bean);

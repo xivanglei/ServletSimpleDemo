@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
+import java.util.Set;
 
 /**
  * Author:xianglei
@@ -27,10 +27,10 @@ public class CartServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType(HeadConst.CONTENT_TYPE_UTF8);
         PrintWriter out = resp.getWriter();
-        List<BookBean> cart = null;
+        Set<BookBean> cart = null;
         HttpSession session = req.getSession(false);
         if(session != null) {
-            cart = (List) session.getAttribute(KeyConst.CART);
+            cart = (Set) session.getAttribute(KeyConst.CART);
         }
         if(ListUtil.isEmpty(cart)) {
             out.println("对不起，您还没有购买任何商品！");

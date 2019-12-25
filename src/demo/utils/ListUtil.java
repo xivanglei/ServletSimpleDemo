@@ -1,6 +1,7 @@
 package demo.utils;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Author:xianglei
@@ -9,7 +10,13 @@ import java.util.List;
  */
 public class ListUtil {
 
-    public static boolean isEmpty(List list) {
-        return list == null || list.isEmpty();
+    public static boolean isEmpty(Object list) {
+        if(list == null) return true;
+        if(list instanceof List) {
+            return ((List) list).isEmpty();
+        } else if(list instanceof Set) {
+            return ((Set) list).isEmpty();
+        }
+        return true;
     }
 }
