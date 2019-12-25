@@ -2,7 +2,7 @@ package demo.servlet;
 
 import demo.Constans.HeadConst;
 import demo.Constans.KeyConst;
-import demo.Constans.PathConst;
+import demo.Constans.UrlConst;
 import demo.component.UrlParamBuild;
 
 import javax.servlet.RequestDispatcher;
@@ -27,7 +27,7 @@ public class RequestDispatcherServlet extends HttpServlet {
         resp.setContentType(HeadConst.CONTENT_TYPE_UTF8);
         //转发的同时先设置属性
         req.setAttribute(KeyConst.COMPANY, "祥雷");
-        String url = UrlParamBuild.instance(PathConst.URL_DISPATCHER_TARGET)
+        String url = UrlParamBuild.instance(UrlConst.URL_DISPATCHER_TARGET)
                 .addParam("p1", "abc")
                 .toUrl();
         RequestDispatcher dispatcher = req.getRequestDispatcher(url);

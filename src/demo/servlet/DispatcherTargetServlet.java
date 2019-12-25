@@ -2,6 +2,7 @@ package demo.servlet;
 
 import demo.Constans.HeadConst;
 import demo.Constans.KeyConst;
+import demo.Constans.UrlConst;
 import demo.utils.StringUtil;
 
 import javax.servlet.ServletException;
@@ -17,7 +18,7 @@ import java.io.PrintWriter;
  * Date: 2019-12-22 19:24
  * Description:调度器转发的目标页
  */
-@WebServlet(urlPatterns = "/DispatcherTargetServlet")
+@WebServlet(urlPatterns = UrlConst.URL_DISPATCHER_TARGET)
 public class DispatcherTargetServlet extends HttpServlet {
 
     @Override

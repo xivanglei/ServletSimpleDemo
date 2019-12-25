@@ -2,6 +2,7 @@ package demo.servlet;
 
 import demo.Constans.HeadConst;
 import demo.Constans.KeyConst;
+import demo.Constans.UrlConst;
 import demo.utils.DateUtil;
 import demo.utils.StringUtil;
 
@@ -18,7 +19,7 @@ import java.io.IOException;
  * Date: 2019-12-23 08:53
  * Description:Coolie案例
  */
-@WebServlet(urlPatterns = "/CookieServlet")
+@WebServlet(urlPatterns = UrlConst.URL_COOKIE)
 public class CookieServlet extends HttpServlet {
 
     @Override

@@ -3,6 +3,7 @@ package demo.servlet;
 import demo.Constans.HeadConst;
 import demo.Constans.KeyConst;
 import demo.Constans.PathConst;
+import demo.Constans.UrlConst;
 import demo.utils.PropertiesUtil;
 
 import javax.servlet.ServletContext;
@@ -21,7 +22,7 @@ import java.util.Properties;
  * Date: 2019-12-22 11:14
  * Description:中文输出乱码问题
  */
-@WebServlet(urlPatterns = "/ChineseOutputServlet")
+@WebServlet(urlPatterns = UrlConst.URL_CHINESE_OUTPUT)
 public class ChineseOutputServlet extends HttpServlet {
 
     private static final String NORMAL_TEXT = "This is normal Chinese: 这是普通中文";

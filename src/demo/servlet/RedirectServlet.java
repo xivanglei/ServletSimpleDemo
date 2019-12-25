@@ -2,7 +2,7 @@ package demo.servlet;
 
 import demo.Constans.HeadConst;
 import demo.Constans.KeyConst;
-import demo.Constans.PathConst;
+import demo.Constans.UrlConst;
 import demo.utils.StringUtil;
 
 import javax.servlet.ServletException;
@@ -36,9 +36,9 @@ public class RedirectServlet extends HttpServlet {
 
         //根据是否登录成功重定向到不同页面
         if(StringUtil.equals(username, ADMIN_USERNAME) && StringUtil.equals(password, ADMIN_PASSWORD)) {
-            resp.sendRedirect(PathConst.URL_BASE + PathConst.URL_WELCOME);
+            resp.sendRedirect(UrlConst.BASE + UrlConst.H5_WELCOME);
         } else {
-            resp.sendRedirect(PathConst.URL_BASE + PathConst.URL_LOGIN);
+            resp.sendRedirect(UrlConst.BASE + UrlConst.H5_LOGIN);
         }
 
     }

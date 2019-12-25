@@ -2,7 +2,7 @@ package demo.servlet.sessionshoppingcart;
 
 import demo.Constans.HeadConst;
 import demo.Constans.KeyConst;
-import demo.Constans.PathConst;
+import demo.Constans.UrlConst;
 import demo.bean.BookBean;
 import demo.component.UrlParamBuild;
 import demo.db.BookDB;
@@ -20,7 +20,7 @@ import java.io.PrintWriter;
  * Date: 2019-12-24 09:11
  * Description:购物车书列表
  */
-@WebServlet(urlPatterns = "/cart/ListBookServlet")
+@WebServlet(urlPatterns = UrlConst.URL_LIST_BOOK)
 public class ListBookServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,7 +28,7 @@ public class ListBookServlet extends HttpServlet {
         PrintWriter out = resp.getWriter();
         out.println("本站提供的图书有:<br>");
         for(BookBean bean : BookDB.getAll()) {
-            String url = UrlParamBuild.instance(PathConst.URL_BASE + PathConst.URL_PURCHASE_BOOK)
+            String url = UrlParamBuild.instance(UrlConst.BASE + UrlConst.URL_PURCHASE_BOOK)
                     .addParam(KeyConst.ID, bean.getId())
                     .toUrl();
             out.println(bean.getName() + "<a href='" + url + "'>点击购买</a><br>");
