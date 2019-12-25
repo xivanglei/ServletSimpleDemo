@@ -38,7 +38,7 @@ public class RedirectServlet extends HttpServlet {
         if(StringUtil.equals(username, ADMIN_USERNAME) && StringUtil.equals(password, ADMIN_PASSWORD)) {
             resp.sendRedirect(UrlConst.BASE + UrlConst.H5_WELCOME);
         } else {
-            resp.sendRedirect(UrlConst.BASE + UrlConst.H5_LOGIN);
+            resp.sendRedirect(UrlConst.BASE + UrlConst.H5_LOGIN_REDIRECT);
         }
 
     }

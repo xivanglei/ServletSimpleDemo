@@ -21,4 +21,5 @@ public interface KeyConst {
     String LAST_ACCESS = "last_access";
     String ID = "id";
     String CART = "cart";
+    String USER = "user";
 }

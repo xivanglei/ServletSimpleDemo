@@ -39,10 +39,7 @@ public class PurchaseBookServlet extends HttpServlet {
         }
         cart.add(bean);
         //个人理解，通过标准的sessionId key 设置cookie,下次的访问就会带这个sessionId过来，系统就会找到缓存中的session出来，否则就会随机一个新的session
-        Cookie cookie = new Cookie(KeyConst.JSESSIONID, session.getId());
-        cookie.setMaxAge(30 * 60);
-        cookie.setPath(UrlConst.BASE);
-        resp.addCookie(cookie);
+        CommonUtil.saveSessionId(resp, session.getId());
         CommonUtil.redirect(resp, UrlConst.URL_CART);
     }
 
