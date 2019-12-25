@@ -1,5 +1,7 @@
 package demo.servlet;
 
+import demo.Constans.UrlConst;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +17,7 @@ import java.util.Enumeration;
  * Date: 2019-12-21 18:45
  * Description:读取ServletContext初始化参数
  */
-@WebServlet(urlPatterns = "/ReadInitParameterServlet")
+@WebServlet(urlPatterns = UrlConst.URL_READ_INIT_PARAMETER)
 public class ReadInitParameterServlet extends HttpServlet {
 
     @Override

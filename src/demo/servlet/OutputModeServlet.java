@@ -1,6 +1,7 @@
 package demo.servlet;
 
 import demo.Constans.HeadConst;
+import demo.Constans.UrlConst;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -16,7 +17,7 @@ import java.io.PrintWriter;
  * Date: 2019-12-22 11:04
  * Description:介绍两种输出方式
  */
-@WebServlet(urlPatterns = "/OutputModeServlet")
+@WebServlet(urlPatterns = UrlConst.URL_OUTPUT_MODE)
 public class OutputModeServlet extends HttpServlet {
 
     @Override

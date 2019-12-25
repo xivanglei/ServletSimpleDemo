@@ -19,7 +19,7 @@ import java.io.PrintWriter;
  * Date: 2019-12-22 19:21
  * Description:请求调度器 请求转发，请求包含，属性传递
  */
-@WebServlet(urlPatterns = "/RequestDispatcherServlet")
+@WebServlet(urlPatterns = UrlConst.URL_REQUEST_DISPATCHER)
 public class RequestDispatcherServlet extends HttpServlet {
 
     @Override

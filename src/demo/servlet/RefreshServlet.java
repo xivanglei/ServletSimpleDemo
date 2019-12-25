@@ -1,6 +1,7 @@
 package demo.servlet;
 
 import demo.Constans.HeadConst;
+import demo.Constans.UrlConst;
 import demo.utils.HeadUtil;
 
 import javax.servlet.ServletException;
@@ -9,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -18,7 +18,7 @@ import java.util.Date;
  * Date: 2019-12-22 12:12
  * Description:自动刷新，包括定时刷新到其他页面，当前页面多次间隔刷新
  */
-@WebServlet(urlPatterns = "/RefreshServlet")
+@WebServlet(urlPatterns = UrlConst.URL_REFRESH)
 public class RefreshServlet extends HttpServlet {
 
     private int count;

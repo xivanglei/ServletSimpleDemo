@@ -17,7 +17,7 @@ import java.io.IOException;
  * Date: 2019-12-22 16:34
  * Description:请求重定向
  */
-@WebServlet(urlPatterns = "/RedirectServlet")
+@WebServlet(urlPatterns = UrlConst.URL_REDIRECT)
 public class RedirectServlet extends HttpServlet {
 
     private static final String ADMIN_USERNAME = "admin";

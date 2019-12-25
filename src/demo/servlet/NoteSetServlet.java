@@ -1,5 +1,7 @@
 package demo.servlet;
 
+import demo.Constans.UrlConst;
+
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
@@ -18,7 +20,7 @@ import java.util.Enumeration;
  */
 //urlPatterns 表示虚拟路径，loadOnstartUp表示初始化启动 越小越优先，initParams表示初始化设置的参数
 @WebServlet(
-        urlPatterns = "/NoteSetServlet",
+        urlPatterns = UrlConst.URL_NOTE_SET,
         loadOnStartup = 2,
         initParams = {@WebInitParam(name = "encoding", value = "UTF-8")}
         )

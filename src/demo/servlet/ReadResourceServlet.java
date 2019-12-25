@@ -2,6 +2,7 @@ package demo.servlet;
 
 import demo.Constans.HeadConst;
 import demo.Constans.PathConst;
+import demo.Constans.UrlConst;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -21,8 +22,8 @@ import java.util.Set;
  * Date: 2019-12-22 08:58
  * Description:读取资源文件,设置utf-8
  */
-@WebServlet(urlPatterns = "/ReadResource")
-public class ReadResource extends HttpServlet {
+@WebServlet(urlPatterns = UrlConst.URL_READ_RESOURCE)
+public class ReadResourceServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

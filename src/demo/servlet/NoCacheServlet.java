@@ -1,6 +1,7 @@
 package demo.servlet;
 
 import demo.Constans.HeadConst;
+import demo.Constans.UrlConst;
 import demo.utils.HeadUtil;
 
 import javax.servlet.ServletException;
@@ -17,7 +18,7 @@ import java.util.Random;
  * Date: 2019-12-22 12:37
  * Description:禁止缓存示例
  */
-@WebServlet(urlPatterns = "/NoCacheServlet")
+@WebServlet(urlPatterns = UrlConst.URL_NO_CACHE)
 public class NoCacheServlet extends HttpServlet {
 
     @Override

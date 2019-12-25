@@ -2,6 +2,7 @@ package demo.servlet;
 
 import demo.Constans.HeadConst;
 import demo.Constans.KeyConst;
+import demo.Constans.UrlConst;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +16,7 @@ import java.io.IOException;
  * Date: 2019-12-22 17:27
  * Description:获取请求参数，解决获取的中文乱码
  */
-@WebServlet(urlPatterns = "/RequestParamServlet")
+@WebServlet(urlPatterns = UrlConst.URL_REQUEST_PARAM)
 public class RequestParamServlet extends HttpServlet {
 
     @Override
