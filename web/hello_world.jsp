@@ -39,7 +39,7 @@
         public static String str = "jsp展示";
 
         private String outTest() {
-            return"调这方法就能输出" + i;
+            return"调这方法就能输出" + i++;
         }
 
         public void jspInit() {
