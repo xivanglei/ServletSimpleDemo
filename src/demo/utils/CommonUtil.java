@@ -15,7 +15,7 @@ import java.io.IOException;
 public class CommonUtil {
 
 
-    //请求重定向
+    //请求重定向，会产生location响应头和302响应码
     public static void redirect(HttpServletResponse resp, String url) throws IOException {
         resp.sendRedirect(UrlConst.BASE + url);
     }

@@ -22,4 +22,5 @@ public interface KeyConst {
     String ID = "id";
     String CART = "cart";
     String USER = "user";
+    String CHECK_CODE = "check_code";
 }

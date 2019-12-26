@@ -34,10 +34,14 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType(HeadConst.CONTENT_TYPE_UTF8);
+        PrintWriter out = resp.getWriter();
+        String checkCode = req.getParameter(KeyConst.CHECK_CODE);
+        if(!StringUtil.equals(checkCode, CheckCodeServlet.getSavedCheckCode(req))) {
+            out.println("验证码错误!");
+            return;
+        }
         String username = req.getParameter(KeyConst.USERNAME);
         String password = req.getParameter(KeyConst.PASSWORD);
-        PrintWriter out = resp.getWriter();
-
         if(StringUtil.equals(username, ADMIN_USERNAME) && StringUtil.equals(password, ADMIN_PASSWORD)) {
             User user = new User();
             user.setUsername(username);
@@ -47,6 +51,5 @@ public class LoginServlet extends HttpServlet {
         } else {
             out.println("用户名或密码错误，登录失败");
         }
-
     }
 }

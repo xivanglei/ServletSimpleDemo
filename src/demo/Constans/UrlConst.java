@@ -38,6 +38,7 @@ public interface UrlConst {
     String URL_LOGIN = "/login/LoginServlet";                           //登录页展示session处理
     String URL_INDEX = "/login/IndexServlet";                           //模拟首页展示session处理
     String URL_LOGOUT = "/login/LogoutServlet";                         //退出登录展示session处理
+    String URL_CHECK_CODE = "/login/CheckCodeServlet";                  //验证码图片获取
 
 
 }
