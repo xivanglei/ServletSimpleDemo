@@ -8,10 +8,16 @@
     </style>
 </head>
 <body>
-    <form action="" method="get">
-        <p>姓名:<input aria-label="请输入姓名" class="input_box" type="text" name="name"></p>
-        <p>年龄:<input aria-label="请输入年龄" class="input_box" type="text" name="age"></p>
-        <input type="submit" value="提交">
-    </form>
+<form action="RequestParamServlet" method="get">
+    <p>姓名:<input aria-label="请输入姓名" class="input_box" type="text" name="name"></p>
+    <p>年龄:<input aria-label="请输入年龄" class="input_box" type="text" name="age"></p>
+    <p>
+        爱好:
+        <input type="checkbox" name="hobby" value="sing">唱歌
+        <input type="checkbox" name="hobby" value="dance">跳舞
+        <input type="checkbox" name="hobby" value="football">足球
+    </p>
+    <input type="submit" value="提交">
+</form>
 </body>
 </html>

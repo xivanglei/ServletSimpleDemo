@@ -1,4 +1,6 @@
-package demo;
+package demo.servlet;
+
+import demo.Constans.UrlConst;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -7,16 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Enumeration;
 
 /**
  * Author:xianglei
  * Date: 2019-12-21 18:50
  * Description:设置ServletContext参数
  */
-@WebServlet(urlPatterns = "/SetContextInitParameterServlet")
-public class SetContextInitParameterServlet extends HttpServlet {
+@WebServlet(urlPatterns = UrlConst.URL_SET_CONTEXT_PARAMETER)
+public class SetContextParameterServlet extends HttpServlet {
 
     private static final String KEY_DATA = "data";
     private static final String VALUE_DATA = "this servlet save data";
