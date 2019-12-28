@@ -43,4 +43,13 @@
         <!--"/"表示所有找不到的网页都可以跑到这里来,优先级比资源文件更高，如果这么设置连html都访问不到了-->
         <!--<url-pattern>/</url-pattern>-->
     </servlet-mapping>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/common_404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/common_500.jsp</location>
+    </error-page>
 </web-app>

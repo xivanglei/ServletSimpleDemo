@@ -15,6 +15,7 @@
     当前访问时间是：
     <%--脚本片段是输出代码--%>
     <%
+//        这个out是javax.servlet.jsp.JspWriter对象，会先缓存，等待时机再写入response的PrintWriter里
         out.print(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS").format(System.currentTimeMillis()));
     %>
     <%--表达式是直接在代码out中输出--%>
@@ -48,6 +49,8 @@
     %>
 
     <%=outTest() %>
+
+    <%@include file="include_date.jsp"%>
 
     <%--文件源码生成在tomcat的根目录/work/Catalina/localhost/应用名/org/apache/jsp 下，
         但IntelliJ IDEA 配置了tomcat 所以这个文件生成在这个目录下

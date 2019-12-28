@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>wss数据流加解密测试</title>
+    <script src="./aes.js"></script>
+    <script>
+        // const ws = new WebSocket("ws://127.0.0.1:81/echo");
+        // ws.binaryType = 'arraybuffer';
+        //
+        // ws.onopen = function() {
+        //     // Web Socket 已连接上，使用 send() 方法发送数据
+        //     sendPackage('{"cmd":"test","data":{"a":"cc"},"ext":{}}');
+        //     setInterval(function () {
+        //         sendPackage('{"cmd":"heart","data":{},"ext":{}}');
+        //     },5000)
+        // };
+        //
+        // ws.onmessage = function(event) {
+        //     if (event.data instanceof ArrayBuffer) {
+        //         let buffer = event.data;
+        //         let view = new DataView(buffer);
+        //         let str = '';
+        //         let len = view.getUint32(0);
+        //         console.log(len);
+        //         for (let i=4;i<view.byteLength;i++){
+        //             str+=String.fromCharCode(view.getUint8(i));
+        //         }
+        //         console.log(Decrypt(str));
+        //     }
+        // };
+        // ws.onclose = function() {
+        //     // 关闭 websocket
+        // };
+
+        sendPackage('{"cmd":"test","data":{"a":"cc"},"ext":{}}');
+
+        function sendPackage(str){
+            let data = Encrypt(str);
+            console.log(data)
+            let arr = [];
+            for(let i=data.length-1;i>=0;i--){
+                let str = data.charAt(i);
+                arr[i]=str.charCodeAt(0);
+            }
+            // send(arr);
+        }
+
+        function send(byteArr) {
+            let buffer = new ArrayBuffer(byteArr.length + 4);
+            let view = new DataView(buffer);
+            view.setUint32(0, byteArr.length);
+            for (let i = 0; i < byteArr.length; i++) {
+                view.setUint8(i + 4, byteArr[i]);
+            }
+            ws.send(view);
+        }
+
+
+        /**
+         * 加密（需要先加载lib/aes/aes.min.js文件）
+         * @param word
+         * @returns {*}
+         * @return {string}
+         */
+        function Encrypt(word){
+            let hash = CryptoJS.MD5("DlClientPost2019").toString();
+            let iv = CryptoJS.MD5("DlClientPost2019").toString();
+            console.log(hash);
+            console.log(iv);
+            return CryptoJS.AES.encrypt(word, hash, {
+                iv: iv,
+                mode: CryptoJS.mode.CBC,
+                padding: CryptoJS.pad.Pkcs7
+            }).toString();
+        }
+
+        /**
+         * 解密
+         * @param word
+         * @returns {*}
+         */
+        function Decrypt(word){
+            let hash = CryptoJS.MD5("DlClientPost2019").toString();
+            let iv = CryptoJS.MD5("DlClientPost2019").toString();
+            return JSON.parse(CryptoJS.AES.decrypt(word, hash, {iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7}).toString(CryptoJS.enc.Utf8));
+        }
+    </script>
+</head>
+<body>
+<h1>wss数据流加解密测试</h1>
+</body>
+</html>
